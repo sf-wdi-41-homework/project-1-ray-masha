@@ -29,6 +29,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
+/*
+ * FYI
+ * res.render(templateName) only requires the name of the template.
+ * No extension needed.
+ *
+ * ex> res.render('index')
+ */
+
 // route to our index our homepage, I used the index.ejs 
 app.get('/', function(req, res) {
     res.render('index.ejs');
@@ -84,6 +92,12 @@ app.get('/portal', function(req, res) {
 
 });
 
+
+/*
+ * Auth tokens are to be kept secret. Never display them on your website!
+ * Also, the name 'Hash' has a special meaning in code. In this case,
+ * a Hash model would have been clearer as TwitterHash or something similar.
+ */
 //getting twitter auth 
 app.get('/auth/twitter', passport.authenticate('twitter'));
 // after when got auth the datas we got from twitter and redirect back to profile
