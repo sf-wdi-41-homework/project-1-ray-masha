@@ -1,6 +1,7 @@
 var LocalStrategy = require('passport-local').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
 
+// You should have been able to import models/index.js and use it there!
 var User = require('../app/models/user.js');
 
 module.exports = function(passport) {
@@ -18,7 +19,9 @@ module.exports = function(passport) {
     });
 
     // TwitterStrategy
-    passport.use(new TwitterStrategy({
+    // Name it. Then you can use it anywhere in your app:
+    // Ex. passport.authenticate('twitter-auth')
+    passport.use('twitter-auth', new TwitterStrategy({
 
             consumerKey: 'OUjwUJqiRoqpG0gTlZcgA1mv2',
             consumerSecret: 'prILcGZOQL9bRBrnk41tD1IdE4ZTNkGuYTfvtngvRtXk9rua1H',

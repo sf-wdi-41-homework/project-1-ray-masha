@@ -9,6 +9,7 @@ var db = require('../models'); //goes up a directory, finds the models folder, a
 
 function userShow(req,res){
 //GET user information such as session id and username to show on our portal page
+
 }
 
 function userUpdate(req,res){
